@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Limas 3D Interaktif</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- UI Tombol Kiri -->
+<div id="ui">
+  <button id="btnJaring">Buka Jaring-Jaring</button>
+  <button id="btnNormal">Tutup Jaring-Jaring</button>
+  <button id="btnLabelTitik">Tampilkan Label Titik</button>
+  <button id="btnTinggi">Tampilkan Tinggi Limas</button>
+  <button id="btnHighlight">Mode Highlight</button>
+  <button id="btnTransparan">Mode Transparan</button>
+  <button id="btnCalcMateri">Tampilkan Kalkulator & Materi</button>
+</div>
+
+<!-- Label Titik -->
+<div id="labelA" class="label">A</div>
+<div id="labelB" class="label">B</div>
+<div id="labelC" class="label">C</div>
+<div id="labelD" class="label">D</div>
+<div id="labelE" class="label">E</div>
+<div id="labelF" class="label">F</div>
+<div id="labelP" class="label">P</div>
+
+<!-- Panel Kalkulator & Materi -->
+<div id="panel">
+  <h2 id="judulLimas">Limas Segiempat</h2>
+
+  <label>Jenis limas
+    <select id="selectJenis">
+      <option value="3">Limas Segitiga (3 sisi alas)</option>
+      <option value="4" selected>Limas Segiempat (4 sisi alas)</option>
+      <option value="5">Limas Segilima (5 sisi alas)</option>
+      <option value="6">Limas Segienam (6 sisi alas)</option>
+    </select>
+  </label>
+
+  <div id="materiText"></div>
+  <div id="rumusText"></div>
+
+  <hr />
+
+  <h3>Kalkulator</h3>
+  <label>Panjang sisi alas (s)
+    <input id="inputSisi" type="number" min="0" step="0.01" />
+  </label>
+
+  <label>Tinggi limas (t)
+    <input id="inputTinggi" type="number" min="0" step="0.01" />
+  </label>
+
+  <button id="btnHitung">Hitung</button>
+
+  <div id="hasil">
+    <p>Luas Alas = <span id="resLuasAlas">-</span></p>
+    <p>Luas Selimut ≈ <span id="resLuasSelimut">-</span></p>
+    <p>Luas Total ≈ <span id="resLuasTotal">-</span></p>
+    <p>Volume = <span id="resVolume">-</span></p>
+  </div>
+</div>
+
+<canvas id="canvas"></canvas>
+
+<!-- ThreeJS & OrbitControls -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/controls/OrbitControls.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
